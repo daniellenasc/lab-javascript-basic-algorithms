@@ -63,7 +63,7 @@ for (let i = 0; i <= str.length; i++){
 console.log(quantidadeEt) 
 */
 
-const quantidadeEt = (str.match(/et/g) || []).length;
+const quantidadeEt = (str.match(/ et/g) || []).length;
 console.log(quantidadeEt);
 
 
