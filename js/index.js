@@ -68,3 +68,16 @@ console.log(quantidadeEt);
 
 
 // Bonus 2
+//bonus 2
+let phraseToCheck  = 'Lorem Ipsum';
+
+let phraseToCheckAoContrario = "";
+for (let i = phraseToCheck.length - 1; i >= 0; i--) {
+  phraseToCheckAoContrario += phraseToCheck[i];
+}
+
+if (phraseToCheck === phraseToCheckAoContrario){
+  console.log("It is a Palindrome!")
+} else {
+  console.log("It is NOT a Palindrome!")
+}
