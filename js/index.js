@@ -45,7 +45,11 @@ Nullam eros augue, pharetra et magna a, ultricies efficitur est. Morbi libero di
 
 Sed id viverra nunc. Sed viverra consectetur felis ac ornare. Sed et orci quis odio pharetra dictum. Curabitur at ipsum quis velit commodo fringilla vel id enim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi condimentum orci mauris, posuere molestie augue iaculis sit amet. Integer tincidunt ultrices dui sed commodo. In eget arcu nec est luctus ultrices. Nam sit amet accumsan felis, ut varius libero. Vivamus iaculis accumsan mauris eget molestie.`
 
-console.log(str.split(' ').length);
+let separadorEsp = str.split(' ').length;
+let separadorPar = str.split('\n').length;
+let totalDePalavras = separadorEsp + separadorPar;
+console.log(totalDePalavras);
+
 
 let quantidadeEt = 0
 for (let i = 0; i <= str.length; i++){
