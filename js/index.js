@@ -51,15 +51,20 @@ let totalDePalavras = separadorEsp + separadorPar;
 console.log(totalDePalavras);
 
 
+/* ====> dessa maneira não funcionou
 let quantidadeEt = 0
 for (let i = 0; i <= str.length; i++){
   if (str.length[i] === " et"){
-    quantidadeEt += 1
+    quantidadeEt += 1;
   } else {
     continue;
   }
 }
-console.log(quantidadeEt)
+console.log(quantidadeEt) 
+*/
+
+const quantidadeEt = (str.match(/et/g) || []).length;
+console.log(quantidadeEt);
 
 
 // Bonus 2
