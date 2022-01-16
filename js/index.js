@@ -39,39 +39,45 @@ if (hacker1.localeCompare(hacker2) === -1){
 }
 
 // Bonus 1
-let str = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et mauris nunc. Vivamus ut magna in nunc bibendum finibus. Maecenas imperdiet hendrerit facilisis. Nam tristique turpis eu justo blandit vulputate. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In sagittis, mauris ac eleifend vehicula, purus lectus porta justo, quis tincidunt nunc augue eget purus. Mauris id molestie neque.
+const lorem = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin accumsan risus sed nisl imperdiet, interdum pretium orci lobortis. Sed egestas varius ex, non sagittis tortor ultrices ac. Aliquam feugiat a quam eget finibus. Vivamus purus eros, iaculis non dolor a, eleifend varius ante. Donec finibus diam nec mi interdum porta. Pellentesque tempor ullamcorper lacus, quis bibendum turpis sollicitudin vel. Integer semper consequat nibh auctor sollicitudin. Aenean accumsan, turpis sit amet viverra euismod, nibh est porttitor dolor, vitae rutrum ligula augue sit amet leo. Nullam ex purus, bibendum vel ligula ut, convallis viverra mi. Aenean ultricies enim nec quam dictum, id pharetra augue dignissim.
 
-Nullam eros augue, pharetra et magna a, ultricies efficitur est. Morbi libero diam, tincidunt in risus sed, bibendum efficitur velit. Donec in efficitur enim. Nulla sed elit vitae diam eleifend vestibulum. Morbi risus augue, semper id cursus ultricies, sodales at dui. In elementum lacus non scelerisque mollis. Praesent eu neque interdum, sollicitudin tellus vitae, euismod quam. Nam pharetra consectetur felis, ac dictum magna commodo sit amet. Quisque in tellus arcu. Proin eget vehicula mi. Sed lobortis, nisl id elementum imperdiet, lacus dui feugiat lorem, at vehicula arcu nisl sit amet libero. Nunc a velit sit amet elit feugiat pulvinar.
+Curabitur fermentum dolor mauris, at convallis augue maximus at. Vestibulum ut accumsan dolor. Etiam ornare dignissim est. Etiam blandit nisi nec purus scelerisque consectetur. Mauris convallis, velit nec convallis fringilla, est nulla ullamcorper neque, eget maximus purus neque vel sapien. Fusce efficitur vestibulum orci. Etiam ullamcorper tincidunt metus, eget tempor turpis tempor nec. Donec euismod risus nunc, nec congue lorem vestibulum eu.
 
-Sed id viverra nunc. Sed viverra consectetur felis ac ornare. Sed et orci quis odio pharetra dictum. Curabitur at ipsum quis velit commodo fringilla vel id enim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi condimentum orci mauris, posuere molestie augue iaculis sit amet. Integer tincidunt ultrices dui sed commodo. In eget arcu nec est luctus ultrices. Nam sit amet accumsan felis, ut varius libero. Vivamus iaculis accumsan mauris eget molestie.`
+Aliquam consequat, ante eu scelerisque ornare, risus justo accumsan quam, ut venenatis risus justo eget lectus. Aliquam dapibus, arcu non consectetur gravida, est justo aliquet odio, ut blandit felis neque varius justo. Nam finibus nulla non mattis suscipit. Mauris eget pharetra urna. Quisque commodo sodales consectetur. Nam lacinia ullamcorper fringilla. Nunc in feugiat erat. Vestibulum tincidunt dui dictum odio suscipit suscipit. Maecenas sed vulputate neque, fringilla rhoncus dolor. Vivamus sed pulvinar mi, vitae consequat urna. Ut auctor dictum mollis. Nullam eu aliquet purus. Aliquam tincidunt interdum congue. Quisque et eleifend urna, sed vehicula nunc.`
 
+/* 
 let separadorEsp = str.split(' ').length;
 let separadorPar = str.split('\n').length;
 let totalDePalavras = separadorEsp + separadorPar;
 console.log(totalDePalavras);
+ */
 
 
-/* ====> dessa maneira não funcionou
-let quantidadeEt = 0
-for (let i = 0; i <= str.length; i++){
-  if (str.length[i] === " et"){
-    quantidadeEt += 1;
-  } else {
-    continue;
-  }
+//256 = correto é 259 (?)
+function countWords(str) {
+  let wordCount = 0;  
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] === " ") {
+      wordCount++;
+    }
+  }  
+  return wordCount;
 }
-console.log(quantidadeEt) 
-*/
+console.log(countWords(lorem))
 
-const quantidadeEt = (str.match(/ et/g) || []).length;
+
+
+
+const quantidadeEt = (lorem.match(/ et/g) || []).length;
 console.log(quantidadeEt);
+
 
 
 // Bonus 2
 //bonus 2
-let phraseToCheck  = 'Lorem Ipsum';
+let phraseToCheck  = 'A man, a plan, a canal, Panama';
 
-let phraseToCheckAoContrario = "";
+/* let phraseToCheckAoContrario = "";
 for (let i = phraseToCheck.length - 1; i >= 0; i--) {
   phraseToCheckAoContrario += phraseToCheck[i];
 }
@@ -80,4 +86,18 @@ if (phraseToCheck === phraseToCheckAoContrario){
   console.log("It is a Palindrome!")
 } else {
   console.log("It is NOT a Palindrome!")
+} */
+
+function isPalindrome(str) {  
+  str = str.toLowerCase().replace(/[^A-Za-z]/g, '')  
+  console.log(str)
+  
+  for (let i = 0; i < str.length/2; i++) {
+    if (str[i] !== str[str.length - 1 - i]) {
+      return false
+    }
+  }  
+  return true
 }
+
+console.log(isPalindrome(phraseToCheck))
